@@ -1,0 +1,13 @@
+# Don't commit the downloaded dataset — it can be re-fetched via download_dataset.py
+mitdb/
+
+# Don't commit Python virtual environment
+venv/
+
+# Don't commit cached Python files
+__pycache__/
+*.pyc
+
+# Don't commit CSV result files until experiments are final
+# (remove this line once you're ready to commit results)
+*.csv
