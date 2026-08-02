@@ -11,3 +11,6 @@ __pycache__/
 # Don't commit CSV result files until experiments are final
 # (remove this line once you're ready to commit results)
 *.csv
+
+# Don't commit the EEG dataset — re-fetchable from PhysioNet
+eeg_dataset/
