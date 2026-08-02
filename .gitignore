@@ -14,3 +14,6 @@ __pycache__/
 
 # Don't commit the EEG dataset — re-fetchable from PhysioNet
 eeg_dataset/
+
+# Upstream ascon-c source (cloned separately, see README)
+ascon-c/
