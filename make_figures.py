@@ -50,6 +50,9 @@ def fig_throughput(df, outdir):
         ax.plot(s.payload_bytes, s.enc_throughput_mbs, marker="o", ms=4,
                 label=algo, color=COLORS[algo])
     ax.set_xscale("log", base=2)
+    ax.set_xticks(sorted(df.payload_bytes.unique()))
+    ax.set_xticklabels([str(int(v)) for v in sorted(df.payload_bytes.unique())])
+    ax.minorticks_off()
     ax.set_xlabel("Payload size (bytes)")
     ax.set_ylabel("Encryption throughput (MB/s)")
     ax.set_title("Throughput scaling with payload size")
@@ -68,6 +71,7 @@ def fig_largest(df, outdir):
     ax.invert_yaxis()
     ax.set_xlabel("Encryption throughput (MB/s)")
     ax.set_title("Throughput at %d-byte payload" % big)
+    ax.set_xlim(0, s.enc_throughput_mbs.max() * 1.12)
     for i, v in enumerate(s.enc_throughput_mbs):
         ax.text(v, i, " %.0f" % v, va="center", fontsize=8)
     fig.savefig(os.path.join(outdir, "fig_throughput_largest.png"))
