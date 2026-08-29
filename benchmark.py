@@ -86,6 +86,8 @@ def time_operation(fn, reps):
     return {
         "median_ms": statistics.median(samples) * 1000,
         "iqr_ms": (q3 - q1) * 1000,
+        "mean_ms": statistics.mean(samples) * 1000,
+        "sd_ms": statistics.stdev(samples) * 1000,
         "min_ms": samples[0] * 1000,
         "max_ms": samples[-1] * 1000,
         "cpu_time_s": cpu_total,
@@ -166,10 +168,14 @@ def run(args):
                 "reps": args.reps,
                 "enc_median_ms": round(enc["median_ms"], 6),
                 "enc_iqr_ms": round(enc["iqr_ms"], 6),
+                "enc_mean_ms": round(enc["mean_ms"], 6),
+                "enc_sd_ms": round(enc["sd_ms"], 6),
                 "enc_min_ms": round(enc["min_ms"], 6),
                 "enc_max_ms": round(enc["max_ms"], 6),
                 "dec_median_ms": round(dec["median_ms"], 6),
                 "dec_iqr_ms": round(dec["iqr_ms"], 6),
+                "dec_mean_ms": round(dec["mean_ms"], 6),
+                "dec_sd_ms": round(dec["sd_ms"], 6),
                 "enc_throughput_mbs": round(
                     size / (enc["median_ms"] / 1000) / 1e6, 4),
                 "dec_throughput_mbs": round(
