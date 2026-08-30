@@ -32,6 +32,9 @@ def fig_latency(df, outdir):
             ax.plot(s.payload_bytes, s[col], marker="o", ms=4,
                     label=algo, color=COLORS[algo])
         ax.set_xscale("log", base=2); ax.set_yscale("log")
+        ax.set_xticks(sorted(df.payload_bytes.unique()))
+        ax.set_xticklabels([str(int(v)) for v in sorted(df.payload_bytes.unique())])
+        ax.minorticks_off()
         ax.set_xlabel("Payload size (bytes)")
         ax.set_ylabel("Median latency (ms)")
         ax.set_title(title)
