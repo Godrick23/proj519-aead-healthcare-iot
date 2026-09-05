@@ -1,4 +1,4 @@
-# PROJ519 — AEAD benchmarking for EEG data on application-class ARM
+# PROJ519: Authenticated Encryption for EEG Data on Application-Class ARM 
 
 Benchmarks five AEAD algorithms (Ascon-AEAD128, ChaCha20-Poly1305,
 AES-128-GCM, AES-256-GCM, AES-128-CCM) on a Raspberry Pi 5 using EEG
