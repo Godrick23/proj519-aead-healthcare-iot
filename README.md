@@ -52,7 +52,7 @@ than the standardised Ascon-AEAD128.
 
 The PhysioNet EEG Motor Movement/Imagery Database recordings are supplied as EDF. Conversion to the CSV format that 
 the benchmark reads was done with MNE-Python and pandas: four frontal channels (Fc5, Fc3, Fc1, Fcz) at 160 Hz, serialised as float32,
-giving 156,160 bytes per recording. The dataset is not committed; it is re-downloadable from PhysioNet.
+giving 156,160 bytes per recording.
 
 ## Running
 
