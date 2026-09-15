@@ -17,3 +17,6 @@ eeg_dataset/
 
 # Upstream ascon-c source (cloned separately, see README)
 ascon-c/
+
+# Build artefact — see README for the compile command
+libascon.so
