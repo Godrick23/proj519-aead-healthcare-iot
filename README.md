@@ -84,7 +84,6 @@ Core pipeline:
 | `ascon_fast.py` | ctypes wrapper over `libascon.so`, using the NIST/SUPERCOP `crypto_aead_encrypt` interface. |
 | `benchmark.py` | Performance measurement. Captures platform details, runs warmup and timed encryption and decryption, measures memory separately, writes one CSV row per algorithm and payload size. |
 | `security_tests.py` | Avalanche measurement over the authentication tag, plus four attack classes at 500 trials each. |
-| `edf_to_csv.py` | Converts PhysioNet EDF recordings to CSV. |
 | `download_dataset.py` | Fetches the dataset. |
 
 Analysis:
