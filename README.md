@@ -50,9 +50,8 @@ than the standardised Ascon-AEAD128.
 
     python3 download_dataset.py
 
-The PhysioNet EEG Motor Movement/Imagery Database recordings are supplied as EDF. Conversion to the CSV format that 
-the benchmark reads was done with MNE-Python and pandas: four frontal channels (Fc5, Fc3, Fc1, Fcz) at 160 Hz, serialised as float32,
-giving 156,160 bytes per recording.
+This fetches the PhysioNet EEG Motor Movement/Imagery Database. `edf_to_csv.py` converts the EDF recordings to the CSV format the benchmark reads: 
+four frontal channels (Fc5, Fc3, Fc1, Fcz) at 160 Hz, serialised as float32. 
 
 ## Running
 
@@ -84,6 +83,7 @@ Core pipeline:
 | `ascon_fast.py` | ctypes wrapper over `libascon.so`, using the NIST/SUPERCOP `crypto_aead_encrypt` interface. |
 | `benchmark.py` | Performance measurement. Captures platform details, runs warmup and timed encryption and decryption, measures memory separately, writes one CSV row per algorithm and payload size. |
 | `security_tests.py` | Avalanche measurement over the authentication tag, plus four attack classes at 500 trials each. |
+| `edf_to_csv.py` | Converts PhysioNet EDF recordings to CSV. |
 | `download_dataset.py` | Fetches the dataset. |
 
 Analysis:
